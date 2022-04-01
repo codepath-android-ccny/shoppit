@@ -80,21 +80,18 @@ _ShoppIt_ is an Android app that allows people to buy groceries online. To build
 
 ### [BONUS] Digital Wireframes & Mockups:
 
-<img src="DigitalWireframes/login-screen.png" width=150>
-<img src="DigitalWireframes/signup-screen.png" width=150>
-<img src="DigitalWireframes/home-screen.png" width=150>
+<img src="DigitalWireframes/login-screen.png" width=200> <img src="DigitalWireframes/signup-screen.png" width=200>
+<img src="DigitalWireframes/home-screen.png" width=200>
 
-<img src="DigitalWireframes/shop-online-screen.png" width=150>
-<img src="DigitalWireframes/favourites-screen.png" width=150>
-<img src="DigitalWireframes/product-search-screen.png" width=150>
+<img src="DigitalWireframes/shop-online-screen.png" width=200> <img src="DigitalWireframes/favourites-screen.png" width=200>
+<img src="DigitalWireframes/product-search-screen.png" width=200>
 
-<img src="DigitalWireframes/shopping-cart-screen.png" width=150>
-<img src="DigitalWireframes/checkout-screen.png" width=150>
-<img src="DigitalWireframes/profile-screen.png" width=150>
+<img src="DigitalWireframes/shopping-cart-screen.png" width=200> <img src="DigitalWireframes/checkout-screen.png" width=200>
+<img src="DigitalWireframes/profile-screen.png" width=200>
 
 ### [BONUS] Interactive Prototype:
 
-<img src="walkthrough.gif" width=200>
+<img src="walkthrough.gif" width=300>
 
 ## Schema
 
