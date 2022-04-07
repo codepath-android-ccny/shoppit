@@ -135,6 +135,16 @@ _ShoppIt_ is an Android app that allows people to buy groceries online. To build
 | itemId             | String          | Unique ID of each item                                    |
 | quantity           | Number          | Number of each product the user purchased                 |
 
+**Model: ShoppingList**
+
+| Property                   | Type            | Description                                               |
+| -------------------------- | --------------- | ----------------------------------------------------------| 
+| shoppingListId (objectId)  | String          | Unique id for the ShoppingList object (default field)     |
+| shoppingListName           | String          | Name of the saved list of products                        |
+| items                      | Array           | List of each product saved                                |
+| user                       | Pointer         | user points to the User object                            |
+
+
 
 ### Networking
 #### List of network requests by screen
