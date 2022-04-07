@@ -99,7 +99,7 @@ _ShoppIt_ is an Android app that allows people to buy groceries online. To build
 
 | Property          | Type            | Description                                             |
 | ----------------- | --------------- | ------------------------------------------------------- |
-| userId (objectId) | String          | Unique id for the User object (default field) |
+| userId (objectId) | String          | Unique id for the User object (default field)           |
 | password          | String          | Password created by the user to register for an account |
 | email             | String          | Email that user uses to register                        |
 | fullName          | String          | Users full name is required to sign up                  |
@@ -112,6 +112,17 @@ _ShoppIt_ is an Android app that allows people to buy groceries online. To build
 | --------------------- | --------------- | ------------------------------------------------------- |
 | categoryId (objectId) | String          | Unique id for the Category object (default field)       |
 | categoryName          | String          | Unique category name for each type of products          |
+
+**Model: Item**
+
+| Property          | Type            | Description                                             |
+| ----------------- | --------------- | ------------------------------------------------------- |
+| itemId (objectId) | String          | Unique id for the Item object (default field)           |
+| category          | String          | Points to Category object                               |
+| itemName          | String          | Name of the food                                        |
+| itemPrice         | Number          | Cost of each item                                       |
+| itemImage         | File            | Image of the item                                       |
+| quantity          | Number          | Number of available items                               |
 
 
 
