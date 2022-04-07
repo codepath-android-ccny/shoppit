@@ -93,11 +93,18 @@ _ShoppIt_ is an Android app that allows people to buy groceries online. To build
 
 ## Schema
 
-[This section will be completed in Unit 9]
-
 ### Models
 
-[Add table of models]
+**Model: User**
+
+| Property          | Type            | Description                                             |
+| ----------------- | --------------- | ------------------------------------------------------- |
+| userId (objectId) | String          | unique id for the User object (default field) |
+| password          | String          | Password created by the user to register for an account |
+| email             | String          | Email that user uses to register                        |
+| fullName          | String          | Users full name is required to sign up                  |
+| profileImage      | File            | Profile Image that the user uses                        |
+| pointsEarned      | Number          | Number of points that user accumulates                  |
 
 ### Networking
 #### List of network requests by screen
