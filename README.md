@@ -124,6 +124,16 @@ _ShoppIt_ is an Android app that allows people to buy groceries online. To build
 | itemImage         | File            | Image of the item                                       |
 | quantity          | Number          | Number of available items                               |
 
+**Model: Order**
+
+| Property           | Type            | Description                                               |
+| -----------------  | --------------- | ----------------------------------------------------------| 
+| orderId(objectId)  | String          | Unique id for the Order object (default field)            |
+| orderDate          | DateTime        | Date when the order is made                               |
+| confirmationNumber | Number          | Confirmed number that user receives after placing an order|
+| user               | Pointer         | user points to the User object                            |
+| itemId             | String          | Unique ID of each item                                    |
+| quantity           | Number          | Number of each product the user purchased                 |
 
 
 ### Networking
