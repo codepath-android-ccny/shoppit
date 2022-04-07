@@ -99,12 +99,21 @@ _ShoppIt_ is an Android app that allows people to buy groceries online. To build
 
 | Property          | Type            | Description                                             |
 | ----------------- | --------------- | ------------------------------------------------------- |
-| userId (objectId) | String          | unique id for the User object (default field) |
+| userId (objectId) | String          | Unique id for the User object (default field) |
 | password          | String          | Password created by the user to register for an account |
 | email             | String          | Email that user uses to register                        |
 | fullName          | String          | Users full name is required to sign up                  |
 | profileImage      | File            | Profile Image that the user uses                        |
 | pointsEarned      | Number          | Number of points that user accumulates                  |
+
+**Model: Category**
+
+| Property              | Type            | Description                                             |
+| --------------------- | --------------- | ------------------------------------------------------- |
+| categoryId (objectId) | String          | Unique id for the Category object (default field)       |
+| categoryName          | String          | Unique category name for each type of products          |
+
+
 
 ### Networking
 #### List of network requests by screen
