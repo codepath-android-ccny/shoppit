@@ -1,5 +1,3 @@
-# ShoppIt - README
-
 # SHOPPIT
 
 ## Table of Contents
@@ -102,7 +100,143 @@ _ShoppIt_ is an Android app that allows people to buy groceries online. To build
 [Add table of models]
 
 ### Networking
+#### List of network requests by screen
+- Login Screen:
+    - (Read/GET) Read user info for authentication.
+    
+    ```swift
+          private void loginUser(String username, String password) {
+              Log.i(TAG, "Attempting to login user " + username);
+              ParseUser.logInInBackground(username, password, new LogInCallback() {
+                  @Override
+                  public void done(ParseUser user, ParseException e) {
+                      if (e != null){
+                          Log.e(TAG, "Issue with login", e);
+                          return;
+                      }
+                      goMainActivity();
+                      Toast.makeText(LoginActivity.this, "Success!", Toast.LENGTH_SHORT).show();
+                  }
+              });
+          }
+    ```
+- Signup Screen:
+    - (Create/POST) Create a new User object.
+        ```swift
+          private void signUpUser(String username, String password) {
+              Log.i(TAG, "Attempting to login user " + username);
+              // Create the ParseUser
+              ParseUser user = new ParseUser();
+              // Set core properties
+              user.setUsername(username);
+              user.setPassword(password);
+              user.signUpInBackground(new SignUpCallback() {
+                  public void done(ParseException e) {
+                      if (e == null) {
+                          // Hooray! Let them use the app now.
+                          goMainActivity();
+                          Toast.makeText(LoginActivity.this, "Success!", Toast.LENGTH_SHORT).show();
+                      } else {
+                          // Sign up didn't succeed. Look at the ParseException
+                          // to figure out what went wrong
+                          Log.e(TAG, "Issue with login", e);
+                          return;
+                      }
+                  }
+              });
+          }
+        ```
 
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+- Home Screen:
+    - (Read/GET) Retrieve all the Shopping Lists object created by a user.
+        ```swift
+          private void queryShoppingLists() {
+              ParseQuery<ShoppingList> query = ParseQuery.getQuery(ShoppingList.class);
+              query.include(ShoppingList.KEY_USER);
+              query.setLimit(20); // if we want to set limit
+              query.addDescendingOrder(KEY_CREATED_KEY);
+              query.findInBackground(new FindCallback<ShoppingList>() {
+                  @Override
+                  public void done(List<ShoppingList> lists, ParseException e) {
+                      if (e != null) {
+                          Log.e(TAG, "Issue with getting shopping lists", e);
+                          return;
+                      }
+                      for (ShoppingList list : lists) {
+                          Log.i(TAG, "ShoppingList: " + list.getListName());
+                      }
+                      allShoppingLists.addAll(lists);
+                      adapter.notifyDataSetChanged();
+                  }
+              });
+          }
+        ```
+    - (Create/POST) Create a new Shopping List
+    - (Delete) Delete a Shopping List
+
+- Shop Online Screen:
+    - (Read/GET) Retrieve all the Item object from the database
+    ```swift
+          private void queryItems() {
+              ParseQuery<Item> query = ParseQuery.getQuery(Item.class);
+              query.include("category");
+              query.setLimit(20); // if we want to set limit
+              query.addDescendingOrder("category");
+              query.findInBackground(new FindCallback<Item>() {
+                  @Override
+                  public void done(List<Item> items, ParseException e) {
+                      if (e != null) {
+                          Log.e(TAG, "Issue with getting lists", e);
+                          return;
+                      }
+                      for (Item item : items) {
+                          Log.i(TAG, "Item: " + item.getListName());
+                      }
+                      allItems.addAll(items);
+                      adapter.notifyDataSetChanged();
+                  }
+              });
+          }
+    ```
+    - (Create/POST) Add an Item object to Favourite Item model
+    - (Read/GET) Load more Items as user scrolls down
+
+- Search Screen:
+    - (Read/GET) Retrieve all the Items 
+    - (Read/GET) Retrieve Items when searched by item name or category name
+        ```swift
+          protected void queryItemsByCategory(Category category) {
+              ParseQuery<Item> query = ParseQuery.getQuery(Item.class);
+              query.include(Item.KEY_CATEGORY);
+              query.whereEqualTo(Item.KEY_CATEGORY, category);
+              query.setLimit(20);
+              query.addDescendingOrder(Item.KEY_ITEM_NAME);
+              query.findInBackground(new FindCallback<Item>() {
+                  @Override
+                  public void done(List<Item> items, ParseException e) {
+                      if (e != null) {
+                          Log.e(TAG, "Issue with getting items by category", e);
+                          return;
+                      }
+                      for (Item item : items) {
+                          Log.i(TAG, item.getName);
+                      }
+                      allItemss.addAll(items);
+                      adapter.notifyDataSetChanged();
+                  }
+         ```
+
+- Item Details Screen:
+    - (Read/GET) Get the details of an Item such as Item name, Category, price.
+
+- ShoppingList Details Screen:
+    - (Read/GET) Get all the Items is a shopping list
+    - (Read/POST) Add an Item to a shopping list
+
+- Favourite Screen:
+    - (Read/GET) Retrieve all the favourite Items marked by the logged in User
+    - (Update/UPDATE) Update the lists of favourite Items
+    
+- Account/Profile Screen:
+    - (Read/GET) Retrieve logged in User object.
+    - (Update/UPDATE) Update logged in user info.
