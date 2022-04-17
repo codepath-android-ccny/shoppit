@@ -1,5 +1,24 @@
 # SHOPPIT
 
+_ShoppIt_ is an Android app that allows people to buy groceries online
+
+## User Stories
+
+The following functionalities are completed:
+
+- [x] Created Parse backend from the Schema Models
+- [x] Retrieved data from the Parse DB
+- [x] Create the basic UI/UX for the app
+- [x] Added app toolbar and bottom navigation menus
+
+## Video Walk-through
+
+Here's a walk-through of the implemented user stories:
+
+<img src="walkthrough-unit10-sprint1.gif" width=250><br>
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
 ## Table of Contents
 
 1. [Overview](#Overview)
