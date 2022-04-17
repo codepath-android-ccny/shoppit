@@ -1,4 +1,4 @@
-package com.movie.shoppitdemo.utils;
+package com.shoppit.utils;
 
 /** Decorator which adds spacing around the tiles in a Grid layout RecyclerView. Apply to a RecyclerView with:
  SpacesItemDecoration decoration = new SpacesItemDecoration(16);
