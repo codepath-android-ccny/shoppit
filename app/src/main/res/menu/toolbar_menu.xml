@@ -7,12 +7,12 @@
         android:id="@+id/miAdd"
         android:icon="@drawable/ic_baseline_add_24"
         app:showAsAction="ifRoom"
-        android:title="@string/add">
+        android:title="Add Shopping List">
     </item>
     <item
         android:id="@+id/miShoppingCart"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
         app:showAsAction="ifRoom|withText"
-        android:title="@string/shopping_cart">
+        android:title="Shopping Cart">
     </item>
 </menu>
