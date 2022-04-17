@@ -13,6 +13,7 @@ public class Item extends ParseObject {
     public static final String KEY_ITEM_IMAGE = "image";
     public static final String KEY_ITEM_CATEGORY = "category";
     public static final String KEY_CREATED_AT = "createdAt";
+    public static final String KEY_ITEM_UNIT_PRICE = "unitPrice";
 
     // empty constructor needed by the Parceler library
     public Item(){
@@ -41,4 +42,8 @@ public class Item extends ParseObject {
     public void setCategory(Category category){
         put(KEY_ITEM_CATEGORY, category);
     }
+
+    public Double getUnitPrice(){ return getDouble(KEY_ITEM_UNIT_PRICE);}
+
+    public void setUnitPrice(Double unitPrice){put(KEY_ITEM_UNIT_PRICE, unitPrice);}
 }
