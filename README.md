@@ -127,10 +127,11 @@ _ShoppIt_ is an Android app that allows people to buy groceries online. To build
 
 **Model: Category**
 
-| Property              | Type            | Description                                             |
-| --------------------- | --------------- | ------------------------------------------------------- |
-| categoryId (objectId) | String          | Unique id for the Category object (default field)       |
-| categoryName          | String          | Unique category name for each type of products          |
+| Property               | Type            | Description                                             |
+| ---------------------  | --------------- | ------------------------------------------------------- |
+| categoryId (objectId)  | String          | Unique id for the Category object (default field)       |
+| categoryName           | String          | Unique category name for each type of products          |
+| categoryImage          | File            | Image of the Category                                   |
 
 **Model: Item**
 
