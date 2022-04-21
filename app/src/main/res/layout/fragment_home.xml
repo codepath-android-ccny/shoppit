@@ -5,10 +5,39 @@
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello From Home Fragment" />
+        android:layout_height="match_parent">
+
+        <!-- Home Fragment Layout -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id = "@+id/rvShoppingLists"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:padding="0dp"/>
+
+        <ImageView
+            android:id="@+id/ivListIcon"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_marginTop="6dip"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_baseline_list_24"/>
+
+        <TextView
+            android:id="@+id/tvText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivListIcon"
+            android:text="You don't have any shopping list!"
+            android:layout_centerInParent="true"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+
+    </RelativeLayout>
 
 </FrameLayout>
