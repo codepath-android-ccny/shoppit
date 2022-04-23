@@ -2,14 +2,15 @@
 
 _ShoppIt_ is an Android app that allows people to buy groceries online
 
-## User Stories
+## Required Stories for Sprint 1 - Unit 10
 
 The following functionalities are completed:
 
-- [x] Created Parse backend from the Schema Models
-- [x] Retrieved data from the Parse DB
-- [x] Create the basic UI/UX for the app
-- [x] Added app toolbar and bottom navigation menus
+- [x] Design the layout of the homepage
+- [x] Create a bottom navigation view with icons navigating to other screens
+- [x] Design the header with the app name and the shopping cart icon
+- [x] User can browse the items by category when clicking on the category nav menu
+- [x] User can see all the items that he/she can buy by clicking on the shop nav menu
 
 ## Video Walk-through
 
