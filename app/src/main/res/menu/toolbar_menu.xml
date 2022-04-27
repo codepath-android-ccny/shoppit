@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        android:id="@+id/miAdd"
+        android:id="@+id/action_add"
         android:icon="@drawable/ic_baseline_add_24"
         app:showAsAction="ifRoom"
         android:title="Add Shopping List">
     </item>
     <item
-        android:id="@+id/miShoppingCart"
+        android:id="@+id/action_shopping_cart"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
         app:showAsAction="ifRoom|withText"
         android:title="Shopping Cart">
