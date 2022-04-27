@@ -2,6 +2,7 @@ package com.shoppit.activities;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -33,8 +34,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Sets the Toolbar to act as the ActionBar for this Activity window.
+        // Find the toolbar view inside the activity layout
         Toolbar toolbar = findViewById(R.id.toolbar);
+        // Sets the Toolbar to act as the ActionBar for this Activity window.
+        // Make sure the toolbar exists in the activity and is not null
+        setSupportActionBar(toolbar);
 
         // Find the elements
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -47,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
 
         // get items
         queryItem();
+    }
+
+    // Menu icons are inflated just as they were with actionbar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
     }
 
     // Define click listener on bottom navigation
