@@ -63,9 +63,11 @@ public class SearchFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_search, container, false);
 
-        //  View view = inflater.inflate(R.layout.fragment_search, container, false);
-        // setHasOptionsMenu(true);
-        // return view;
+        /**
+        View view = inflater.inflate(R.layout.fragment_search, container, false);
+        setHasOptionsMenu(true);
+        return view;
+         */
     }
 
     // This event is triggered soon after onCreateView().

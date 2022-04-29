@@ -3,6 +3,7 @@ package com.shoppit.fragments;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,6 +52,10 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        // Set the toolbar title
+        Toolbar toolbar= Toolbar.class.cast(getActivity().findViewById(R.id.toolbar));
+        toolbar.setTitle("ShoppIt");
 
         tvText = view.findViewById(R.id.tvText);
         ivListIcon = view.findViewById(R.id.ivListIcon);

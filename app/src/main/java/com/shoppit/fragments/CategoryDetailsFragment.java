@@ -3,10 +3,14 @@ package com.shoppit.fragments;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,11 +44,13 @@ public class CategoryDetailsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_category_details, container, false);
     }
@@ -81,9 +87,33 @@ public class CategoryDetailsFragment extends Fragment {
             Log.i(TAG, "Category id: " + categoryId);
         }
 
+        // Change the toolbar title dynamically
+        Toolbar toolbar= Toolbar.class.cast(getActivity().findViewById(R.id.toolbar));
+        assert toolbar != null;
+        toolbar.setTitle(category.getCategoryName());
+
+        // set toolbar navigation icon: back arrow
+        toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // getActivity().onBackPressed();
+                requireActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
+
         // Get all the items for a particular category
         queryItems(category);
 
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+
+        // Hide the action_add menu item
+        MenuItem itemAdd = menu.findItem(R.id.action_add);
+        itemAdd.setVisible(false);
     }
 
     private void queryItems(Category category) {
