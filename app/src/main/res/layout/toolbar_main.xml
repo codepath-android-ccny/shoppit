@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar
+<com.google.android.material.appbar.MaterialToolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
@@ -9,7 +9,10 @@
     app:contentInsetStart="0dp"
     app:titleTextColor="@android:color/white"
     app:title="@string/app_name"
+    app:titleCentered="true"
     android:textSize = "20sp"
     android:background="@color/purple_500"
     app:popupTheme="@style/PopupOverlay"
-    app:menu="@menu/toolbar_menu"/>
+    app:theme="@style/SearchViewStyle"
+    app:menu="@menu/main_menu"
+    app:collapseIcon="@drawable/ic_baseline_arrow_back_24"/>
