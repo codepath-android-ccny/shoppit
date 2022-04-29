@@ -28,4 +28,19 @@
         <item name="android:dropDownVerticalOffset">5.0dp</item>
 
     </style>
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.Light.SearchView">
+        <!--This line changes the color of text in Toolbar-->
+        <item name="android:textColorPrimary">@color/white</item>
+        <!--This line changes the color of icons in toolbar (back, overflow menu icons)-->
+        <item name="android:textColorSecondary">@color/white</item>
+        <!-- note that this is how you style your hint icon -->
+        <item name="searchHintIcon">@null</item>
+        <item name="searchIcon">@null</item>
+        <item name="android:textColorHint">@color/white</item>
+        <!-- Background for the search query section (e.g. EditText) -->
+        <item name="queryBackground">@color/white</item>
+        <!-- The hint text that appears when the user has not typed anything -->
+        <item name="queryHint">"Search items.."</item>
+    </style>
 </resources>
