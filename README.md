@@ -2,7 +2,7 @@
 
 _ShoppIt_ is an Android app that allows people to buy groceries online
 
-## Required User Stories for Sprint 2 - Unit 11
+## Required User Stories for Unit 11 - Sprint 2
 
 The following functionalities are completed:
 
@@ -16,7 +16,7 @@ Here's a walk-through of the implemented user stories:
 
 <img src="walkthrough-unit11-sprint2.gif" width=250><br>
 
-## Required User Stories for Sprint 1 - Unit 10
+## Required User Stories for Unit 10 - Sprint 1
 
 The following functionalities are completed:
 
