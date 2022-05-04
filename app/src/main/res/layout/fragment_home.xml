@@ -25,7 +25,8 @@
             android:layout_marginTop="6dip"
             android:layout_centerInParent="true"
             android:gravity="center_vertical"
-            android:src="@drawable/ic_baseline_list_24"/>
+            android:src="@drawable/ic_baseline_list_24"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/tvText"
@@ -36,7 +37,8 @@
             android:layout_centerInParent="true"
             android:singleLine="true"
             android:textAlignment="center"
-            android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:visibility="gone"/>
 
     </RelativeLayout>
 
