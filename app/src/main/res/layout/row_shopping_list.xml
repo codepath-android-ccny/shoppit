@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="start">
+
+    <TextView
+        android:id="@+id/tvShoppingList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawablePadding="8dp"
+        android:padding="8dp"
+        android:maxLines="1"
+        android:text="Shopping List Name"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:drawableLeftCompat="@drawable/ic_baseline_format_list_bulleted_black_24" />
+
+    <TextView
+        android:id="@+id/tvShoppingListOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawablePadding="8dp"
+        android:layout_alignParentEnd="true"
+        android:padding="8dp"
+        android:maxLines="1"
+        android:text=""
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:drawableLeftCompat="@drawable/ic_baseline_more_horiz_24" />
+
+</RelativeLayout>
