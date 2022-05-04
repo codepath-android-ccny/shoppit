@@ -8,6 +8,15 @@
         android:icon="@drawable/ic_baseline_add_24"
         app:showAsAction="ifRoom"
         android:title="Add Shopping List">
+        <!-- submenu -->
+        <menu>
+            <item
+                android:id="@+id/action_create_list"
+                android:icon="@drawable/ic_baseline_format_list_bulleted_24"
+                app:showAsAction="withText"
+                android:title="Create Shopping List" />
+
+        </menu>
     </item>
     <item
         android:id="@+id/action_shopping_cart"
