@@ -2,6 +2,20 @@
 
 _ShoppIt_ is an Android app that allows people to buy groceries online
 
+## Required User Stories for Unit 12 - Sprint 3
+
+The following functionalities are completed:
+
+- [x] User can sign up to create a new account using Parse authentication.
+- [x] Users can log in to their accounts.
+- [x] User can create and delete shopping list
+
+## Video Walk-through
+
+Here's a walk-through of the implemented user stories:
+
+<img src="walkthrough-unit12-sprint3.gif" width=250><br>
+
 ## Required User Stories for Unit 11 - Sprint 2
 
 The following functionalities are completed:
