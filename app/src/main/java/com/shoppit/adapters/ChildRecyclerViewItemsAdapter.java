@@ -21,6 +21,7 @@ public class ChildRecyclerViewItemsAdapter extends RecyclerView.Adapter<ChildRec
 
     Context context;
     List<Item> items;
+    int itemCount;
 
     public ChildRecyclerViewItemsAdapter(Context context, List<Item> items) {
         this.context = context;
@@ -50,12 +51,21 @@ public class ChildRecyclerViewItemsAdapter extends RecyclerView.Adapter<ChildRec
         TextView tvItemName;
         TextView tvItemUnitPrice;
 
+        ImageView ivRemoveItem;
+        TextView tvItemCount;
+        ImageView ivAddItem;
+
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             ivItemImage = itemView.findViewById(R.id.ivItemImage);
             tvItemName = itemView.findViewById(R.id.tvItemName);
             tvItemUnitPrice = itemView.findViewById(R.id.tvItemUnitPrice);
+
+            ivRemoveItem = itemView.findViewById(R.id.ivRemoveItem);
+            tvItemCount = itemView.findViewById(R.id.tvItemCount);
+            ivAddItem = itemView.findViewById(R.id.ivAddItem);
         }
 
         public void bind(Item item) {
@@ -68,6 +78,53 @@ public class ChildRecyclerViewItemsAdapter extends RecyclerView.Adapter<ChildRec
             if (image != null){
                 Glide.with(context).load(image.getUrl()).into(ivItemImage);
             }
+
+            // Set click listener to Add item image view
+            ivAddItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Get the item count from the text field
+                    itemCount = Integer.parseInt(tvItemCount.getText().toString());
+
+                    // Make the remove item button and item count field visible
+                    ivRemoveItem.setVisibility(View.VISIBLE);
+                    tvItemCount.setVisibility(View.VISIBLE);
+
+                    // Increment the item count field
+                    itemCount++;
+
+                    // Set the item count field with the new value
+                    tvItemCount.setText(String.valueOf(itemCount));
+                }
+            });
+
+            // Set click listener to Remove item image view
+            ivRemoveItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Get the item count from the text field
+                    itemCount = Integer.parseInt(tvItemCount.getText().toString());
+
+                    // decrement item count
+                    itemCount--;
+
+                    if (itemCount > 0){
+
+                        ivRemoveItem.setVisibility(View.VISIBLE);
+                        tvItemCount.setVisibility(View.VISIBLE);
+
+                        tvItemCount.setText(String.valueOf(itemCount));
+                    }
+
+                    if (itemCount == 0){
+
+                        tvItemCount.setText(String.valueOf(itemCount));
+
+                        ivRemoveItem.setVisibility(View.GONE);
+                        tvItemCount.setVisibility(View.GONE);
+                    }
+                }
+            });
         }
     }
 }
