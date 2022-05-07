@@ -6,12 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.shoppit.R;
+import com.shoppit.fragments.CartFragment;
 import com.shoppit.models.Item;
 import com.parse.ParseFile;
 
@@ -62,6 +64,10 @@ public class CategoryDetailsAdapter extends RecyclerView.Adapter<CategoryDetails
         ImageView ivAddItem;
 
 
+        //solomon -- set onClickListener for image
+        //              when click, adds Item to cart
+
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -77,9 +83,18 @@ public class CategoryDetailsAdapter extends RecyclerView.Adapter<CategoryDetails
 
         public void bind(Item item) {
             // Bind the Item data to the view elements
+            //solomon -- set onClickListener for image
+            //              when click, adds Item to cart
+            ivItemImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    CartFragment.item_list.add(item);
+                    Toast.makeText(context, "item clicked", Toast.LENGTH_SHORT).show();
+                }
+            });
+
             tvItemName.setText(item.getItemName());
             tvItemUnitPrice.setText("$ " + String.valueOf(item.getUnitPrice()));
-
             // Load the Category image
             ParseFile image = item.getImage();
             if (image != null){

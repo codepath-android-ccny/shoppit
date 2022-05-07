@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.SaveCallback;
 import com.shoppit.R;
+import com.shoppit.fragments.CartFragment;
 import com.shoppit.fragments.CategoryFragment;
 import com.shoppit.fragments.ShoppingListDialogFragment;
 import com.shoppit.fragments.HomeFragment;
@@ -31,6 +33,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements ShoppingListDialogFragment.OnInputListener {
 
     private static final String TAG = "MainActivity";
+
+    //solomon zhang
+    //variable for shopping cart
+    private MenuItem cart;
     
     final FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -62,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements ShoppingListDialo
         queryItem();
     }
 
+
     // Menu icons are inflated just as they were with actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -83,7 +90,12 @@ public class MainActivity extends AppCompatActivity implements ShoppingListDialo
             ShoppingListDialogFragment shoppingListDialog = ShoppingListDialogFragment.newInstance("Add a Shopping List");
             shoppingListDialog.show(fragmentManager, "dialog_create_shopping_list");
         }
-
+        //solomon zhang on shopping cart item click
+        if (item.getItemId() == R.id.action_shopping_cart){
+            Toast.makeText(this, "cart clicked", Toast.LENGTH_SHORT).show();
+            Fragment fragment = new CartFragment();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+        }
         return true;
     }
 
