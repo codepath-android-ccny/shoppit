@@ -77,6 +77,6 @@ public class ShoppingListDetailsFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
 
         menu.clear(); // Remove all the old menu items
-        // inflater.inflate(R.menu.search_menu, menu);
+        inflater.inflate(R.menu.menu_shopping_list_details, menu);
     }
 }
