@@ -20,7 +20,7 @@
 
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Dark">
         <!-- changes the background of the Toolbar's popup -->
-        <item name="android:itemBackground">@color/purple_700</item>
+        <item name="android:itemBackground">@color/purple_500</item>
 
         <!-- show the pop up menu below the toolbar-->
         <item name="android:windowDisablePreview">true</item>
