@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/action_add_item"
+        android:icon="@drawable/ic_baseline_add_24"
+        app:showAsAction="ifRoom"
+        android:title="Add Item">
+    </item>
+
+    <item
+        android:id="@+id/action_scan_text"
+        android:icon="@drawable/ic_baseline_document_scanner_24"
+        app:showAsAction="ifRoom"
+        android:title="Scan Text">
+    </item>
+
+    <item
+        android:id="@+id/action_more_options"
+        android:icon="@drawable/ic_baseline_more_vert_24"
+        app:showAsAction="ifRoom|withText"
+        android:title="More Options">
+        <!-- submenu -->
+        <menu>
+            <item
+                android:id="@+id/action_scan_barcode"
+                android:icon="@drawable/ic_baseline_fit_screen_24"
+                app:showAsAction="withText"
+                android:title="Scan Barcode" />
+
+        </menu>
+    </item>
+</menu>
