@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
 import com.shoppit.R;
 import com.shoppit.fragments.CategoryDetailsFragment;
+import com.shoppit.models.CartItem;
 import com.shoppit.models.Category;
 import com.shoppit.models.Item;
 
@@ -26,9 +28,11 @@ import java.util.List;
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder>{
 
     Context context;
-    List<Item> items;
+    List<CartItem> items;
+    private double totalCost = 0;
 
-    public CartAdapter(Context context, List<Item> items) {
+    //changed List<Item> to List<CartItem>
+    public CartAdapter(Context context, List<CartItem> items) {
         this.context = context;
         this.items = items;
     }
@@ -42,9 +46,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Item item = items.get(position);
+        CartItem item = items.get(position);
         holder.bind(item);
-
+        System.out.println(totalCost);
     }
 
     @Override
@@ -56,6 +60,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder>{
         TextView tvCartItem;
         ImageView ivCartImage;
         TextView tvCartPrice;
+        TextView tvCartQuantity;
+        ImageButton ibCartRemove;
+        ImageButton ibCartAdd;
+        ImageButton ibCartDelete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -63,17 +71,55 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder>{
             tvCartItem = itemView.findViewById(R.id.tvCartItem);
             ivCartImage = itemView.findViewById(R.id.ivCartImage);
             tvCartPrice = itemView.findViewById(R.id.tvCartPrice);
+            tvCartQuantity = itemView.findViewById(R.id.tvCartQuantity);
+            ibCartAdd = itemView.findViewById(R.id.ibCartAdd);
+            ibCartRemove = itemView.findViewById(R.id.ibCartRemove);
+            ibCartDelete = itemView.findViewById(R.id.ibCartDelete);
         }
 
-        public void bind(Item item) {
+        public void bind(CartItem item) {
+            //calculatoe total cost
+            totalCost += item.getQuantity()*item.getItem().getUnitPrice();
             // Bind the Category data to the view elements
-            tvCartItem.setText(item.getItemName());
-            tvCartPrice.setText(item.getUnitPrice().toString());
+            tvCartItem.setText(item.getItem().getItemName());
+            tvCartPrice.setText(item.getItem().getUnitPrice().toString());
+            tvCartQuantity.setText(String.valueOf(item.getQuantity()));
             // Load the Category image
-            ParseFile image = item.getImage();
+            ParseFile image = item.getItem().getImage();
             if (image != null){
                 Glide.with(context).load(image.getUrl()).into(ivCartImage);
             }
+
+            ibCartAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    items.get(getBindingAdapterPosition()).addQuantity(1);
+                    //update totalCost
+                    totalCost += items.get(getBindingAdapterPosition()).getItem().getUnitPrice();
+                    //update text
+                    tvCartQuantity.setText(String.valueOf(items.get(getBindingAdapterPosition()).getQuantity()));
+                }
+            });
+
+            ibCartRemove.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(items.get(getBindingAdapterPosition()).getQuantity() > 0){
+                        items.get(getBindingAdapterPosition()).removeQuantity(1);
+                        totalCost -= items.get(getBindingAdapterPosition()).getItem().getUnitPrice();
+                        //update text
+                        tvCartQuantity.setText(String.valueOf(items.get(getBindingAdapterPosition()).getQuantity()));
+                    }
+                }
+            });
+
+            ibCartDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    items.remove(item);
+                    notifyDataSetChanged();
+                }
+            });
         }
     }
 }

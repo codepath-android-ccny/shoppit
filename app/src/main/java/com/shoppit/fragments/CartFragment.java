@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.shoppit.R;
 import com.shoppit.adapters.CartAdapter;
 import com.shoppit.adapters.CategoriesAdapter;
+import com.shoppit.models.CartItem;
 import com.shoppit.models.Category;
 import com.shoppit.models.Item;
 
@@ -25,8 +26,8 @@ public class CartFragment extends Fragment {
 
     private RecyclerView rvCartItem;
     private CartAdapter cartAdapter;
-    public static List<Item> item_list = new ArrayList<>();
-
+//    public static List<Item> item_list = new ArrayList<>();
+    public static List<CartItem> item_list = new ArrayList<>();
     public CartFragment() {
         // Required empty public constructor
     }
