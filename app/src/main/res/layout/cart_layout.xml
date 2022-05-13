@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <!--Text View to display Item Name-->
 
+    <!--Text View to display Item unit price-->
     <ImageView
         android:id="@+id/ivCartImage"
         android:layout_width="200dp"
         android:layout_height="150dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="0dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="4dp"
         android:contentDescription="@null"
         android:padding="5dp"
         tools:srcCompat="@tools:sample/avatars" />
@@ -24,34 +26,78 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ivCartImage"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toEndOf="@+id/ivCartImage"
         android:padding="5dp"
         android:text="Category Item Name"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <!--Text View to display Item unit price-->
     <TextView
         android:id="@+id/tvCartPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvCartItem"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="52dp"
+        android:layout_toEndOf="@+id/ivCartImage"
         android:padding="5dp"
         android:text="Item Unit Price"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tvCartQuantity"
+    <ImageButton
+        android:id="@+id/ibCartDelete"
         android:layout_width="wrap_content"
-        android:layout_height="31dp"
-        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llCartQuantity"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="187dp"
-        android:layout_marginEnd="67dp"
-        android:text="quantity" />
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="13dp"
+        android:layout_toEndOf="@+id/ivCartImage"
+        app:srcCompat="@drawable/ic_baseline_delete_24" />
+
+    <LinearLayout
+        android:id="@+id/llCartQuantity"
+        android:layout_width="200dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tvCartPrice"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="14dp"
+        android:layout_toEndOf="@+id/ivCartImage"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ibCartRemove"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_remove_circle_outline_24" />
+
+        <TextView
+            android:id="@+id/tvCartQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="TextView" />
+
+        <ImageButton
+            android:id="@+id/ibCartAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_add_circle_outline_24" />
+    </LinearLayout>
 
 </RelativeLayout>

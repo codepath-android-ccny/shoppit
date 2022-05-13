@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.shoppit.R;
 import com.shoppit.fragments.CartFragment;
+import com.shoppit.models.CartItem;
 import com.shoppit.models.Item;
 import com.parse.ParseFile;
 
@@ -23,7 +24,7 @@ public class CategoryDetailsAdapter extends RecyclerView.Adapter<CategoryDetails
 
     Context context;
     List<Item> items;
-    int itemCount;
+//    int itemCount;
 
     public CategoryDetailsAdapter(Context context, List<Item> items) {
         this.context = context;
@@ -63,6 +64,8 @@ public class CategoryDetailsAdapter extends RecyclerView.Adapter<CategoryDetails
         TextView tvItemCount;
         ImageView ivAddItem;
 
+        int itemCount;
+
 
         //solomon -- set onClickListener for image
         //              when click, adds Item to cart
@@ -88,7 +91,10 @@ public class CategoryDetailsAdapter extends RecyclerView.Adapter<CategoryDetails
             ivItemImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    CartFragment.item_list.add(item);
+                    if(itemCount > 0){
+                        CartItem cartItem = new CartItem(item, itemCount);
+                        CartFragment.item_list.add(cartItem);
+                    }
                     Toast.makeText(context, "item clicked", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -149,6 +155,4 @@ public class CategoryDetailsAdapter extends RecyclerView.Adapter<CategoryDetails
             });
         }
     }
-
-
 }
