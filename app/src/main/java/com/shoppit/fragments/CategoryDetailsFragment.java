@@ -83,7 +83,6 @@ public class CategoryDetailsFragment extends Fragment {
         if (getArguments() != null) {
             categoryId = getArguments().getString("id");
             category = getArguments().getParcelable("categoryObj");
-
             Log.i(TAG, "Category id: " + categoryId);
         }
 
