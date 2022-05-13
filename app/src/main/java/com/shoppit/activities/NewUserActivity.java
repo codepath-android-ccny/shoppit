@@ -20,8 +20,9 @@ public class NewUserActivity extends AppCompatActivity {
     public static final String TAG ="NewUserActivity";
     private EditText etName;
     private EditText etEmail;
-    private EditText etNewusername;
-    private EditText etNewpassword;
+    private EditText etNewUserName;
+    private EditText etNewPassword;
+    private Button btnCancel;
     private Button btnNewSignup;
 
     @Override
@@ -31,20 +32,29 @@ public class NewUserActivity extends AppCompatActivity {
 
         etName = findViewById(R.id.etName);
         etEmail = findViewById(R.id.etEmail);
-        etNewusername = findViewById(R.id.etNewusername);
-        etNewpassword = findViewById(R.id.etNewpassword);
+        etNewUserName = findViewById(R.id.etNewusername);
+        etNewPassword = findViewById(R.id.etNewpassword);
+        btnCancel = findViewById(R.id.btnCancel);
         btnNewSignup = findViewById(R.id.btnNewSignup);
 
         btnNewSignup.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Log.i(TAG, "Clicked the login button");
+
                 String name = etName.getText().toString();
                 String email = etEmail.getText().toString();
-                String username = etNewusername.getText().toString();
-                String password = etNewpassword.getText().toString();
+                String username = etNewUserName.getText().toString();
+                String password = etNewPassword.getText().toString();
                 loginUser(name,email,username,password);
 
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goLoginActivity();
             }
         });
     }
