@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etUsername;
     private EditText etPassword;
     private Button btnLogin;
-    private Button btnUser;
+    private TextView btnUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -32,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.etNewUsername);
         etPassword = findViewById(R.id.etNewPassword);
         btnLogin = findViewById(R.id.btnNewLogin);
-        btnUser = findViewById(R.id.btnNewUser);
+        btnUser = findViewById(R.id.etNewUser);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

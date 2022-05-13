@@ -8,10 +8,23 @@
     android:orientation="vertical"
     tools:context=".activities.LoginActivity">
 
+    <TextView
+        android:id="@+id/etLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/hi"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="ShoppIt"
+        android:textColor="@color/teal_200"
+        android:textSize="48sp" />
+
     <EditText
         android:id="@+id/etNewUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:ems="10"
         android:hint="username" />
@@ -30,25 +43,26 @@
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_weight="1"
         android:text="LOGIN" />
 
-    <Button
-        android:id="@+id/btnNewUser"
+    <TextView
+        android:id="@+id/etNewUser"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="235dp"
+        android:layout_marginTop="30dp"
         android:layout_weight="1"
-        android:text="Sign Up" />
+        android:text="Sign Up"
+        android:textColor="@color/purple_200" />
 
     <TextView
         android:id="@+id/etSignUp"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="-35dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="-21dp"
         android:text="Don't have an account?"
         android:textSize="15sp" />
 
