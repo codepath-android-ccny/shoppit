@@ -6,10 +6,10 @@ _ShoppIt_ is an Android app that allows people to buy groceries online
 
 The following functionalities are completed:
 
-- [ ] Cart Screen
-- [ ] Checkout Screen
-- [ ] Profile Screen
-- [ ] Shopping list screen
+- [x] User can add items to the shopping cart
+- [x] User can see the ordered items in the Profile Screen
+- [x] User can logout of his/her account
+- [x] User can cancel the signup by clicking on the Cancel button
 
 ## Video Walk-through
 
