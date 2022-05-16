@@ -8,7 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import com.shoppit.R;
 import com.shoppit.models.Category;
@@ -48,6 +50,10 @@ public class ParentRecyclerViewCategoriesAdapter extends RecyclerView.Adapter<Pa
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         holder.rvChildItems.setLayoutManager(layoutManager);
         holder.rvChildItems.setHasFixedSize(true);
+
+        // Snap to Center Effect
+        SnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(holder.rvChildItems);
 
         holder.tvCategoryName.setText(currentCategory.getCategoryName());
         List<Item> categoryItems = new ArrayList<>();
