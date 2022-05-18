@@ -32,31 +32,31 @@
 
             <item
                 android:id="@+id/action_edit_items"
-                android:icon="@drawable/ic_baseline_fit_screen_24"
+                android:icon="@drawable/ic_baseline_edit_24"
                 app:showAsAction="withText"
                 android:title="Edit Items" />
 
             <item
                 android:id="@+id/action_uncross_all_items"
-                android:icon="@drawable/ic_baseline_fit_screen_24"
+                android:icon="@drawable/ic_baseline_undo_24"
                 app:showAsAction="withText"
                 android:title="Uncross All Items" />
 
             <item
                 android:id="@+id/action_delete_all_items"
-                android:icon="@drawable/ic_baseline_fit_screen_24"
+                android:icon="@drawable/ic_baseline_delete_24"
                 app:showAsAction="withText"
                 android:title="Delete Crossed Off Items" />
 
             <item
                 android:id="@+id/action_share_email_print"
-                android:icon="@drawable/ic_baseline_fit_screen_24"
+                android:icon="@drawable/ic_baseline_share_24"
                 app:showAsAction="withText"
                 android:title="Share, Email &amp; Print " />
 
             <item
                 android:id="@+id/action_buy_online"
-                android:icon="@drawable/ic_baseline_fit_screen_24"
+                android:icon="@drawable/ic_baseline_shopping_basket_24"
                 app:showAsAction="withText"
                 android:title="Buy Online" />
 
