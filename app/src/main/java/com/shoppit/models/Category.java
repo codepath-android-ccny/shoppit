@@ -1,5 +1,7 @@
 package com.shoppit.models;
 
+import androidx.annotation.Nullable;
+
 import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
@@ -32,5 +34,23 @@ public class Category extends ParseObject {
 
     public void setImage(ParseFile parseFile){
         put(KEY_CATEGORY_IMAGE, parseFile);
+    }
+
+    @Override
+    public String toString() {
+        return "Category{} " + this.getCategoryName();
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+
+        Category category = (Category) obj;
+        assert category != null;
+        return this.getCategoryName().equals(category.getCategoryName());
     }
 }

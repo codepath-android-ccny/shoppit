@@ -1,6 +1,7 @@
 package com.shoppit.adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.shoppit.R;
+import com.shoppit.fragments.ShoppingListDetailsFragment;
 import com.shoppit.fragments.HomeFragment;
 import com.shoppit.models.ShoppingList;
 
@@ -136,6 +138,34 @@ public class ShoppingListsAdapter extends RecyclerView.Adapter<ShoppingListsAdap
                         }
                     });
                     popupMenu.show();
+                }
+            });
+
+            // Set click listener to tvShoppingList
+            tvShoppingList.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Cast the context to AppCompatActivity
+                    AppCompatActivity activity = (AppCompatActivity) view.getContext();
+
+                    // Create the CategoryDetailsFragment
+                    Fragment ShoppingListDetailsFragment = new ShoppingListDetailsFragment();
+
+                    // Passing Category object to the fragment
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelable("shoppingListObj", shoppingList);
+
+                    // Set CategoryDetailsFragment Arguments
+                    ShoppingListDetailsFragment.setArguments(bundle);
+
+                    // Create transaction and Replace whatever is in the fragment_container view with this fragment
+                    // and finally Commit the transaction
+                    activity.
+                            getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container,ShoppingListDetailsFragment)
+                            .addToBackStack(null)
+                            .commit();
                 }
             });
         }

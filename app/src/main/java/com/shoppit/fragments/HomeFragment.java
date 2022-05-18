@@ -70,6 +70,8 @@ public class HomeFragment extends Fragment {
 
         Toolbar toolbar= Toolbar.class.cast(getActivity().findViewById(R.id.toolbar));
         toolbar.setTitle("ShoppIt");
+        // Set toolbar navigation icon to null
+        toolbar.setNavigationIcon(null);
 
         // Initialize the widgets
         tvText = view.findViewById(R.id.tvText);
