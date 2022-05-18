@@ -7,6 +7,7 @@ import com.parse.ParseObject;
 import com.shoppit.models.Category;
 import com.shoppit.models.Item;
 import com.shoppit.models.ShoppingList;
+import com.shoppit.models.ShoppingListDetail;
 
 public class ParseApplication extends Application {
 
@@ -18,6 +19,7 @@ public class ParseApplication extends Application {
         ParseObject.registerSubclass(Item.class);
         ParseObject.registerSubclass(Category.class);
         ParseObject.registerSubclass(ShoppingList.class);
+        ParseObject.registerSubclass(ShoppingListDetail.class);
 
         Parse.initialize(new Parse.Configuration.Builder(this)
                 .applicationId("nJBq3qwnaHFyhaHYUYKJbDjXukwQYyEy2H13Dy7U")
