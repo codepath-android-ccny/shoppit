@@ -17,12 +17,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:text="Category"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textColor="@color/white"
+        android:padding="5dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:background="@color/purple_500"/>
 
     <!-- Child RecyclerView: contains items for the particular category -->
     <androidx.recyclerview.widget.RecyclerView
@@ -31,9 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tvCategoryName"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         android:padding="0dp" />
 
 </RelativeLayout>
