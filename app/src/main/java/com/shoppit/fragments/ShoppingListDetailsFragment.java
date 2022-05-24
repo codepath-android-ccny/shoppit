@@ -3,6 +3,7 @@ package com.shoppit.fragments;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -45,7 +46,6 @@ public class ShoppingListDetailsFragment extends Fragment {
     public ShoppingListDetailsFragment() {
 
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -166,5 +166,31 @@ public class ShoppingListDetailsFragment extends Fragment {
 
         menu.clear(); // Remove all the old menu items
         inflater.inflate(R.menu.menu_shopping_list_details, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
+        // Cast the context to AppCompatActivity
+        AppCompatActivity activity = (AppCompatActivity) getContext();
+
+        // when clicked on the add menu item
+        if (item.getItemId() == R.id.action_add_item){
+            fragment = new AddItemsToShoppingListFragment();
+            Log.i(TAG, "Clicked on the Add Item button");
+        }
+
+        // Create transaction and Replace whatever is in the fragment_container view with this fragment
+        // and finally Commit the transaction
+        assert activity != null;
+        assert fragment != null;
+        activity.
+                getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container,fragment)
+                .addToBackStack(null)
+                .commit();
+
+        return true;
     }
 }

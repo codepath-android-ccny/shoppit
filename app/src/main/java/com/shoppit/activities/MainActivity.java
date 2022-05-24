@@ -77,6 +77,13 @@ public class MainActivity extends AppCompatActivity implements ShoppingListDialo
         return true;
     }
 
+    /**
+     * If your Activity's onOptionsItemSelected method returns true, the call is consumed in activity
+     * and Fragment's onOptionsItemSelected is not called.
+     * So, return false in your Activity onOptionsItemSelected method or
+     * parent class implementation via super.onOptionsItemSelected call (default implementation returns false)
+     * */
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -96,7 +103,9 @@ public class MainActivity extends AppCompatActivity implements ShoppingListDialo
             Fragment fragment = new CartFragment();
             fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
         }
-        return true;
+
+        // Return false to allow normal menu processing to proceed, true to consume it here
+        return false;
     }
 
     // Define click listener on bottom navigation
