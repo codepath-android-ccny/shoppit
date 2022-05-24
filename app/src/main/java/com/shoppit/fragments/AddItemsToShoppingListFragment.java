@@ -45,7 +45,7 @@ public class AddItemsToShoppingListFragment extends Fragment {
         // Set the title of the toolbar to null
         Toolbar toolbar= (Toolbar) requireActivity().findViewById(R.id.toolbar);
         assert toolbar != null;
-        toolbar.setTitle(null);
+        toolbar.setTitle("Add Items");
     }
 
     @Override
@@ -54,5 +54,7 @@ public class AddItemsToShoppingListFragment extends Fragment {
 
         // Remove all the old menu items
         menu.clear();
+        // Inflate the new menu options
+        inflater.inflate(R.menu.add_items_to_shopping_list_menu, menu);
     }
 }
