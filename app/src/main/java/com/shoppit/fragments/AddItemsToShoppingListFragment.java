@@ -43,7 +43,8 @@ public class AddItemsToShoppingListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Set the title of the toolbar to null
-        Toolbar toolbar= Toolbar.class.cast(getActivity().findViewById(R.id.toolbar));
+        Toolbar toolbar= (Toolbar) requireActivity().findViewById(R.id.toolbar);
+        assert toolbar != null;
         toolbar.setTitle(null);
     }
 
